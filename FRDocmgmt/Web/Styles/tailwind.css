@@ -1,0 +1,7 @@
+/* Keep the Bootstrap starter styles while adopting Tailwind for new UI work. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw) important source(none);
+
+/* Source paths are relative to this stylesheet; include Razor and component code. */
+@source "../Components";

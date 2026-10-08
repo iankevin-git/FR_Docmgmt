@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+**/.vs/
+*.csproj.user
+**/node_modules/
+FRDocmgmt/Web/wwwroot/css/tailwind.css

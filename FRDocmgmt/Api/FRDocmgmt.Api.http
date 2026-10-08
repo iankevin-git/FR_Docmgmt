@@ -1,0 +1,15 @@
+@host = http://localhost:5223
+
+### List document metadata
+GET {{host}}/api/documents
+
+### Create document metadata
+POST {{host}}/api/documents
+Content-Type: application/json
+
+{
+  "title": "Example document"
+}
+
+### Get document metadata (replace with the ID returned above)
+GET {{host}}/api/documents/00000000-0000-0000-0000-000000000000

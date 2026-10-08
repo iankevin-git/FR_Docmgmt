@@ -1,0 +1,15 @@
+{
+  "name": "frdocmgmt-web",
+  "private": true,
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "scripts": {
+    "css:build": "node --import ./scripts/tailwind-resolver.mjs ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./Styles/tailwind.css -o ./wwwroot/css/tailwind.css --minify",
+    "css:watch": "node --import ./scripts/tailwind-resolver.mjs ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./Styles/tailwind.css -o ./wwwroot/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "tailwindcss": "4.3.3"
+  }
+}

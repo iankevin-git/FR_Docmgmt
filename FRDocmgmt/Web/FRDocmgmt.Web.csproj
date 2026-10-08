@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+    <DefaultItemExcludes>$(DefaultItemExcludes);node_modules/**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot/css/tailwind.css" Condition="!Exists('wwwroot/css/tailwind.css')" />
+  </ItemGroup>
+
+  <Target Name="RestoreTailwind" Inputs="package.json;package-lock.json"
+          Outputs="node_modules/.package-lock.json"
+          Condition="'$(DesignTimeBuild)' != 'true'">
+    <Exec Command="npm ci --no-audit --no-fund" WorkingDirectory="$(MSBuildProjectDirectory)"
+          EnvironmentVariables="NODE_OPTIONS=--use-system-ca" />
+  </Target>
+
+  <Target Name="BuildTailwind" BeforeTargets="PrepareForBuild"
+          DependsOnTargets="RestoreTailwind" Condition="'$(DesignTimeBuild)' != 'true'">
+    <Exec Command="npm run css:build" WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+</Project>

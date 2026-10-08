@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Domain/FRDocmgmt.Domain.csproj" />
+  <Project Path="Application/FRDocmgmt.Application.csproj" />
+  <Project Path="Infrastructure/FRDocmgmt.Infrastructure.csproj" />
+  <Project Path="Api/FRDocmgmt.Api.csproj" />
+  <Project Path="Web/FRDocmgmt.Web.csproj" />
+</Solution>
